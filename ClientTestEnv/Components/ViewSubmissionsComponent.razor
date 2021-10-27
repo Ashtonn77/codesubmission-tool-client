@@ -1,0 +1,284 @@
+@using System.Threading
+@inject HttpClient HttpClient
+@inject IJSRuntime jsr
+
+<style>
+  .center-inner {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    max-width: 1000px;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #edf2fb;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+
+    .center-inner::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .center-inner::-webkit-scrollbar-track {
+            background-color: #EAF2F8;
+        }
+
+        .center-inner::-webkit-scrollbar-thumb {
+            background-color: #95A5A6;
+            border-radius: 20px;
+            border: 3px solid #EAF2F8;
+        }
+
+  .btn-admin-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .answer-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 94vh;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    background-color: #2d2d2d;
+    color: #fff;
+    display: none;
+
+  }
+
+  .answer-modal-user {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.6rem;
+  }
+
+  .answer-modal-title {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .answer-modal-container {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .answer-modal-container-inner {
+
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    color: #000;
+    max-width: 700px;
+    max-height: 500px;
+    padding: 0.6rem;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  }
+</style>
+
+
+<div class="answer-modal" id="answer-modal">
+
+  @if (SingleSubmission != null)
+  {
+      <div class="answer-modal-user">
+        <p>@SingleSubmission.UserEmail</p>
+        <button class="btn btn-danger btn-sm" @onclick="() => ToggleAnswerModal(SingleSubmission)">Close</button>
+      </div>
+      <div class="answer-modal-title">
+        <h2>@SingleSubmission.QuestionTitle</h2>
+      </div>
+      <div class="answer-modal-container">
+
+        <textarea class="answer-modal-container-inner" spellcheck="false">
+        @SingleSubmission.Answer
+        </textarea>
+
+      </div>
+  }
+  else
+  {
+      <h3>No data...</h3>
+  }
+
+</div>
+
+<EditForm Model="Submission" class="center-inner">
+
+  @if (filterIsClicked)
+  {
+    @if (TotalSubmissions != null)
+    {
+          <div class="btn-admin-wrapper mb-3">
+
+        @if (SingleSubmission != null)
+        {
+                <button type="button" class="btn btn-outline-danger btn-sm mr-2"  @onclick="() => DeleteSubmission(SingleSubmission.UserEmail)">Delete Submission</button>
+        }        
+            <button type="button" class="btn btn-outline-success btn-sm" @onclick="Reset">Reset</button>
+
+          </div>
+
+          <table class="table table-bordered table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Title</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+          @foreach (var submission in TotalSubmissions)
+          {
+
+                  <tr>
+                    <th scope="row">@submission.QuestionNumber</th>
+                    <td>@submission.UserEmail</td>
+                    <td>@submission.QuestionTitle</td>
+                    <td><button class="btn btn-primary btn-sm" @onclick="() => ToggleAnswerModal(submission)">View
+                        Submission</button></td>
+                  </tr>
+
+          }
+
+            </tbody>
+          </table>
+    }
+    else
+    {
+          <h1>Loading data...</h1>
+    }
+
+  }
+  else
+  {
+
+    @if (Emails != null)
+    {
+
+          <table class="table table-bordered table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+          @foreach (var email in Emails)
+          {
+
+                  <tr>
+                    <th scope="row">1</th> 
+                    <td>@email</td>           
+                    <td><button class="btn btn-primary btn-sm" @onclick="() => Filter(email)">View
+                        Submissions</button></td>
+                  </tr>
+
+          }
+
+            </tbody>
+          </table>
+    }
+    else
+    {
+          <h1>Loading data...</h1>
+    }
+
+
+  } 
+
+
+</EditForm>
+
+@code
+{
+  public SubmissionSample Submission { get; set; } = new SubmissionSample();
+  List<SubmissionSample> TotalSubmissions;
+  SubmissionSample SingleSubmission;
+
+  List<string> Cache;
+  bool firstStart = false;
+
+  /*new updates*/
+  bool filterIsClicked = false;
+  List<string> Emails;
+
+  protected override async Task OnInitializedAsync()
+  {
+
+    firstStart = true;
+    Emails = await HttpClient.GetFromJsonAsync<List<string>>("https://codesubmissionapi.azurewebsites.net/api/SubmissionSample/user");
+    Cache = Emails;
+
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await jsr.InvokeVoidAsync("initializeAnswerModalIds");
+    }
+  }
+
+  private void Reset()
+  {
+    filterIsClicked = false;
+    Emails = Cache;
+  }
+
+  private async Task Filter(string email)
+  {
+    filterIsClicked = true;
+    TotalSubmissions = await
+    HttpClient.GetFromJsonAsync<List<SubmissionSample>>($"https://codesubmissionapi.azurewebsites.net/api/submissionsample/email={email}");
+    SingleSubmission = TotalSubmissions[0];
+
+  }
+
+  private async Task ToggleAnswerModal(SubmissionSample submission)
+  {
+    SingleSubmission = submission;
+    await jsr.InvokeVoidAsync("toggle");
+  }
+
+  private async Task DeleteSubmission(string email)
+  {
+    bool confirmed = await jsr.InvokeAsync<bool>("confirm", "Are you sure? All submissions for this candidate will be deleted");
+
+    if (confirmed)
+    {
+      await HttpClient.DeleteAsync($"https://codesubmissionapi.azurewebsites.net/api/submissionsample/email={email}");
+      Emails = await HttpClient.GetFromJsonAsync<List<string>>("https://codesubmissionapi.azurewebsites.net/api/SubmissionSample/user");
+      Cache = Emails;
+      filterIsClicked = false;
+
+    }
+
+  }
+
+}
