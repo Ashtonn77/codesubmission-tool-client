@@ -133,7 +133,6 @@ using CodeSubmissionClient.ClientTestEnv.Utils;
         bool validSecurityKey = true;
 
         //check security key
-
         if (reg.Role != null && !reg.Role.Equals("Candidate"))
         {
             if (string.IsNullOrEmpty(securityKey) || !securityKey.Equals("1234"))

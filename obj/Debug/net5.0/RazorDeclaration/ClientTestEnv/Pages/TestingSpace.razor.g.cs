@@ -111,6 +111,13 @@ using System.Threading.Tasks;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
+using CodeSubmissionClient.ClientTestEnv.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -125,14 +132,14 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
+#line 197 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
  
 
     public SubmissionSample Submission { get; set; }
     private int Counter = 1;
     private int InitialCount = 0;
     private bool loaded = false;
-      private async Task PageUp()
+    private async Task PageUp()
     {
         if (State.Count <= State.Submissions.Count && State.isSaved)
         {
@@ -145,7 +152,7 @@ using Newtonsoft.Json;
         else
         {
             await jsr.InvokeVoidAsync("alert", "Don't forget to save your work!");
-        }      
+        }
 
     }
 
@@ -154,7 +161,7 @@ using Newtonsoft.Json;
         Counter--;
         State.Count--;
         if (Counter < 1)
-            Counter = 1; 
+            Counter = 1;
 
     }
 
@@ -174,15 +181,16 @@ using Newtonsoft.Json;
             State.Submissions = await client.GetFromJsonAsync<List<SubmissionSample>>($"https://codesubmissionapi.azurewebsites.net/api/submissionsample/email={username}");
             InitialCount = State.Submissions.Count;
             loaded = true;
-        } 
+        }
     }
+    
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 171 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
-                                                                      
+#line 247 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\TestingSpace.razor"
+                                                                          
 
     private async Task SubmitResponse()
     {
@@ -194,16 +202,16 @@ using Newtonsoft.Json;
             }
             var SubmissionJson = JsonConvert.SerializeObject(State.Submissions);
             var httpContent = new StringContent(SubmissionJson, Encoding.UTF8, "application/json");
-            await client.PostAsync("api/SubmissionSample", httpContent);
+            await client.PostAsync("https://codesubmissionapi.azurewebsites.net/api/SubmissionSample", httpContent);
 
             await client.PostAsJsonAsync("https://prod-168.westeurope.logic.azure.com:443/workflows/9acd2517f22a4b9aad3cf300df015596/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=U_cZvxtuKiZSIPoAWoXd2AM_uEn291I3gNJVjlrH-DI", State.Submissions[0]);
 
-            NavigationManager.NavigateTo("/done"); 
+            NavigationManager.NavigateTo("/done");
         }
         else
         {
             await jsr.InvokeVoidAsync("alert", "Don't forget to save your work!");
-        } 
+        }
 
     }
 

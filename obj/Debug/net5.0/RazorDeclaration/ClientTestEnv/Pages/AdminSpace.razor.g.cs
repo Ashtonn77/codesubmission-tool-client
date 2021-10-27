@@ -96,6 +96,13 @@ using CodeSubmissionClient.ClientTestEnv.Utils;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\AdminSpace.razor"
+using CodeSubmissionClient.ClientTestEnv.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/admin_")]
     public partial class AdminSpace : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,7 +112,7 @@ using CodeSubmissionClient.ClientTestEnv.Utils;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 161 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\AdminSpace.razor"
+#line 162 "C:\Users\Ashton\OneDrive - Nebula\course-work\recruitment-portal-project\CodeSubmissionClient\ClientTestEnv\Pages\AdminSpace.razor"
  
     private int Counter = 1;
 

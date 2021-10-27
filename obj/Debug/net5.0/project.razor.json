@@ -140,39 +140,6 @@
         }
       },
       {
-        "HashCode": -209761422,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "QuestionOneComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent"
-        }
-      },
-      {
-        "HashCode": -336444307,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 173155894,
         "Kind": "Components.Component",
         "Name": "CodeSubmissionClient.ClientTestEnv.Components.QuestionSixComponent",
@@ -305,6 +272,39 @@
         }
       },
       {
+        "HashCode": -209761422,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "QuestionOneComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent"
+        }
+      },
+      {
+        "HashCode": -336444307,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Components.QuestionOneComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -330366223,
         "Kind": "Components.Component",
         "Name": "CodeSubmissionClient.ClientTestEnv.Components.ViewSubmissionsComponent",
@@ -338,72 +338,6 @@
         }
       },
       {
-        "HashCode": -682813913,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AdminSpace"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace"
-        }
-      },
-      {
-        "HashCode": 2112807893,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1129660065,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NewLoginTest"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest"
-        }
-      },
-      {
-        "HashCode": -790527455,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1425568113,
         "Kind": "Components.Component",
         "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewLogoutTest",
@@ -433,61 +367,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLogoutTest",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 951595506,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NewRegisterTest"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ValueChanged",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<System.String>",
-            "Metadata": {
-              "Common.PropertyName": "ValueChanged",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest"
-        }
-      },
-      {
-        "HashCode": -491856503,
-        "Kind": "Components.Component",
-        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
-        "AssemblyName": "CodeSubmissionClient",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ValueChanged",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<System.String>",
-            "Metadata": {
-              "Common.PropertyName": "ValueChanged",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -554,6 +433,127 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.SubmissionsSpaceTest",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 951595506,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NewRegisterTest"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ValueChanged",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<System.String>",
+            "Metadata": {
+              "Common.PropertyName": "ValueChanged",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest"
+        }
+      },
+      {
+        "HashCode": -491856503,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ValueChanged",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<System.String>",
+            "Metadata": {
+              "Common.PropertyName": "ValueChanged",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewRegisterTest",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -682813913,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AdminSpace"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace"
+        }
+      },
+      {
+        "HashCode": 2112807893,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.AdminSpace",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1129660065,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NewLoginTest"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest"
+        }
+      },
+      {
+        "HashCode": -790527455,
+        "Kind": "Components.Component",
+        "Name": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
+        "AssemblyName": "CodeSubmissionClient",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CodeSubmissionClient.ClientTestEnv.Pages.NewLoginTest",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
